@@ -9,6 +9,6 @@ import java.util.List;
 public class CategoriyaDto {
     private String nomi,izoh;
     private Integer yulduzcha;
-    private List<Tillar> tillarList;
+    private Integer tilId;
 
 }

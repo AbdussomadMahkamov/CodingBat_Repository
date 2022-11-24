@@ -24,4 +24,19 @@ public class CategoriyaController {
         ApiRespons apiRespons=categoriyaService.editCategoriya(id, dto);
         return ResponseEntity.status(apiRespons.isHolat() ? HttpStatus.OK : HttpStatus.NOT_FOUND).body(apiRespons.getXabar());
     }
+    @GetMapping("/readCategoriya")
+    public HttpEntity<?> CategoriyaRead(){
+        ApiRespons apiRespons=categoriyaService.readCategoriya();
+        return ResponseEntity.status(apiRespons.isHolat() ? HttpStatus.OK : HttpStatus.NOT_FOUND).body(apiRespons.getXabar());
+    }
+    @GetMapping("/readIdCategoriya/{id}")
+    public HttpEntity<?> CategoriyaReadId(@PathVariable Integer id){
+        ApiRespons apiRespons=categoriyaService.readIdCategoriya(id);
+        return ResponseEntity.status(apiRespons.isHolat() ? HttpStatus.OK : HttpStatus.NOT_FOUND).body(apiRespons.getXabar());
+    }
+    @DeleteMapping("/delCategoriya/{id}")
+    public HttpEntity<?> CategoriyaDelete(@PathVariable Integer id){
+        ApiRespons apiRespons=categoriyaService.delCategoriya(id);
+        return ResponseEntity.status(apiRespons.isHolat() ? HttpStatus.OK : HttpStatus.NOT_FOUND).body(apiRespons.getXabar());
+    }
 }

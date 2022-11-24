@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,4 +17,6 @@ public class Tillar {
     private Integer id;
     @Column(nullable = false, unique = true)
     private String nomi;
+    @OneToMany
+    private List<Categoriya> categoriya;
 }

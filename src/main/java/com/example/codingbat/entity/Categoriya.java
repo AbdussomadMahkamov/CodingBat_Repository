@@ -18,6 +18,6 @@ public class Categoriya {
     private String nomi;
     private String izoh;
     private Integer yulduzcha;
-    @ManyToMany
-    private List<Tillar> tillar;
+    @ManyToOne
+    private Tillar tillar;
 }
